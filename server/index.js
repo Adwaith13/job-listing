@@ -22,6 +22,21 @@ app.get("/health", (req, res) => {
 
 app.use("/auth",authRoutes)
 
+app.use((req,res,next)=>{
+  const error= new Error();
+  error.status=404;
+  next(error);
+})
+
+app.use((error,req,res,next)=>{
+  res.status(error.status || 500).json({
+    error:{
+      status:error.status || 500,
+      message:'Something went wrong! Please try after some time.'
+    }
+  })
+})
+
 app.listen(process.env.PORT, () => {
   mongoose
     .connect(process.env.MONGODB_URL)
