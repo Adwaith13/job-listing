@@ -4,36 +4,7 @@ const users = require("../models/users.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const isUserRegistered = (req, res, next) => {
-  try {
-    const token = req.headers.token;
-    const user = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = user;
-    next();
-  } catch (error) {
-    console.log(error);
-    res.status(401).json({
-      status: "failed",
-      message: "User Unauthorized",
-    });
-  }
-};
-
-const isUserLoggedIn = (req, res, next) => {
-  try {
-    const token = req.headers.token;
-    const user = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = user;
-    next();
-  } catch (error) {
-    console.log(error);
-    res.status(401).json({
-      status: "failed",
-      message: "User Unauthorized",
-    });
-  }
-};
-
+//register new users
 router.post("/register", async (req, res) => {
   try {
     const { name, email, mobile, password } = req.body;
@@ -61,12 +32,10 @@ router.post("/register", async (req, res) => {
     };
 
     await users.create(newUser);
-    const token = jwt.sign(newUser, process.env.JWT_SECRET, { expiresIn: 60 });
 
     res.json({
       status: "success",
       message: "user created successfully",
-      token,
     });
   } catch (error) {
     console.log(error);
@@ -77,9 +46,13 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.post("/login", isUserRegistered, async (req, res) => {
+//user login
+router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
+    if(!email || !password){
+      res.status(400).json({ status: "failed", message: "Email and Password Required"});
+    }
     const user = await users.findOne({ email });
     if (!user) {
       res.status(404).json({ status: "failed", message: "user not found" });
@@ -91,23 +64,17 @@ router.post("/login", isUserRegistered, async (req, res) => {
         .status(404)
         .json({ status: "failed", message: "invalid credentials" });
     }
-    const token = jwt.sign(user.toJSON(), process.env.JWT_SECRET, {
-      expiresIn: 60,
-    });
+    const loginToken = jwt.sign(user.toJSON(), process.env.JWT_SECRET,{expiresIn:14400});
 
     res.status(200).json({
       status: "success",
-      message: `${user.name} loggedIn successfully`,
-      token,
+      message: `${user.name}`,
+      loginToken,
     });
   } catch (error) {
     console.log(error);
     res.status(404).json({ status: "failed", message: "something wrong" });
   }
-});
-
-router.get("/dashboard", isUserLoggedIn, (req, res) => {
-  res.send(`Welcome user ${req.user.name}`);
 });
 
 module.exports = router;

@@ -1,9 +1,11 @@
+//import
 const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors=require("cors")
 const authRoutes=require("../server/routes/auth.js")
+const jobRoutes=require("../server/routes/jobpost.js")
 
 dotenv.config();
 
@@ -20,8 +22,11 @@ app.get("/health", (req, res) => {
   res.status(200).json({ status: "success", service: "job listing platform",timestamp:new Date()});
 });
 
+//routes
 app.use("/auth",authRoutes)
+app.use("/job",jobRoutes)
 
+//middleware to handle errors
 app.use((req,res,next)=>{
   const error= new Error();
   error.status=404;
