@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-const users = require("../models/users.js");
 const jobPost = require("../models/jobs.js");
 
 //middleware to check if user is logged in
@@ -21,8 +19,13 @@ const isUserLoggedIn = (req, res, next) => {
   }
 };
 
+//name of recruiter
+router.get("/dashboard", isUserLoggedIn, (req, res) => {
+  res.send(`Hello! ${req.user.name}`);
+});
+
 //post new job details
-router.post("/jobpost", isUserLoggedIn, async (req, res) => {
+router.post("/jobpost", async (req, res) => {
   try {
     const newJobPost = new jobPost({ ...req.body });
 
@@ -42,7 +45,7 @@ router.post("/jobpost", isUserLoggedIn, async (req, res) => {
 
     for (const field of required_fields) {
       if (!req.body[field]) {
-        res.status(400).json({
+        return res.status(400).json({
           status: "failed",
           message: `${field} is required`,
         });
@@ -62,9 +65,8 @@ router.post("/jobpost", isUserLoggedIn, async (req, res) => {
   }
 });
 
-
 //update the job details using ID
-router.patch("/jobpost/:id",isUserLoggedIn, async (req, res) => {
+router.patch("/jobpost/:id", async (req, res) => {
   try {
     const {
       company_name,
@@ -105,25 +107,140 @@ router.patch("/jobpost/:id",isUserLoggedIn, async (req, res) => {
   }
 });
 
-router.get("/jobdata",async(req,res)=>{
-    try{
-        const jobs=await jobPost.find();
-        res.json({
-            status:'success',
-            jobdata:jobs,
-        })
+
+//fetch data for edit forms using id
+router.get("/jobpost/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const jobDatabyID = await jobPost.findById(id, {
+      company_name: 1,
+      add_logo_url: 1,
+      job_position: 1,
+      monthly_salary: 1,
+      job_type: 1,
+      remote_office: 1,
+      location: 1,
+      job_description: 1,
+      about_company: 1,
+      skills_required: 1,
+      information: 1,
+    });
+
+    if (!jobDatabyID) {
+      return res.status(404).json({
+        status: "FAILED",
+        message: "Job not found",
+      });
     }
-    catch{
-        res.status(500).json({
-            status: 'FAILED',
-            message: 'Something went wrong'
-          })
+
+    res.json({
+      status: "SUCCESS",
+      message: jobDatabyID,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "FAILED",
+      message: "Something went wrong",
+    });
+  }
+});
+
+//fetching all jobdata
+router.get("/jobdata", async (req, res) => {
+  try {
+    const jobs = await jobPost.find();
+    res.json({
+      status: "success",
+      jobdata: jobs,
+    });
+  } catch {
+    res.status(500).json({
+      status: "FAILED",
+      message: "Something went wrong",
+    });
+  }
+});
+
+//fetching jobdata by id
+router.get("/jobdata/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const jobDatabyID = await jobPost.findById(id, {
+      company_name: 1,
+      add_logo_url: 1,
+      job_position: 1,
+      monthly_salary: 1,
+      job_type: 1,
+      remote_office: 1,
+      location: 1,
+      job_description: 1,
+      about_company: 1,
+      skills_required: 1,
+      information: 1,
+    });
+
+    if (!jobDatabyID) {
+      return res.status(404).json({
+        status: "FAILED",
+        message: "Job not found",
+      });
     }
+
+    res.json({
+      status: "SUCCESS",
+      message: jobDatabyID,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "FAILED",
+      message: "Something went wrong",
+    });
+  }
+});
+
+//filter jobs based on skills
+router.get("/jobdata/skills", async(req,res)=>{
+  try{
+    const {skills_required}=req.query;
+    if(skills_required){
+      const allSkills=skills_required.split(',').map(skill => skill.trim());
+      const filteredJobs=await jobPost.find({
+        skills_required: {$in : allSkills}
+      });
+      res.json(filteredJobs);
+    }else{
+      res.json([]);
+    }
+  }catch(error){
+    console.log(error)
+    res.status(500).json({
+      status:'failed',
+      message:'Internal Server Error'
+    })
+
+  }
 })
 
-//name of recruiter
-router.get("/dashboard",isUserLoggedIn, (req, res) => {
-    res.send(`Hello! ${req.user.name}`);
-  });
+//route for fetching jobposition
+router.get("/jobdata/jobposition", async(req,res)=>{
+  try{
+    const {job_position}=req.query;
+    if(job_position){
+      const allPositions = job_position.split(',').map(position => position.trim());
+      const filteredPosition=await jobPost.find({
+        job_position: {$in : allPositions}
+      });
+      res.json(filteredPosition);
+    }else{
+      res.json([]);
+    }
+  }catch(error){
+    console.log(error)
+    res.status(500).json({
+      status:'failed',
+      message:'Internal Server Error'
+    })
+  }
+})
 
 module.exports = router;
