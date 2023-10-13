@@ -20,7 +20,7 @@ export default function Jobs() {
 
   const fetchJobData = () => {
     axios
-      .get("http://localhost:4000/job/jobdata")
+      .get("job-listing-ecru.vercel.app/job/jobdata")
       .then((res) => {
         console.log(res.data)
         setJobData(res.data.jobdata);
@@ -34,7 +34,7 @@ export default function Jobs() {
   };
 
   const filterSkills=()=>{
-    axios.get(`http://localhost:4000/job/jobdata/?skills=${selectedSkill}`)
+    axios.get(`job-listing-ecru.vercel.app/job/jobdata/?skills=${selectedSkill}`)
     .then((res)=>{
       console.log(res.data.jobdata)
       setJobData(res.data.jobdata)
@@ -58,7 +58,7 @@ export default function Jobs() {
 
   const searchJobPosition=(e)=>{
     setJobPosition(e.target.value)
-    axios.get(`http://localhost:4000/job/jobdata/?jobposition=${jobPosition}`)
+    axios.get(`job-listing-ecru.vercel.app/job/jobdata/?jobposition=${jobPosition}`)
     .then((res)=>{
       console.log(res.data.jobdata)
       setJobData(res.data.jobdata);
@@ -70,7 +70,7 @@ export default function Jobs() {
 
   const fetchUserData = () => {
     axios
-      .get("http://localhost:4000/job/dashboard", {
+      .get("job-listing-ecru.vercel.app/job/dashboard", {
         headers: {
           token: localStorage.getItem("logintoken"),
         },

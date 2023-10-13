@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 //register new users
-router.post("/register", async (req, res) => {
+router.post("job-listing-ecru.vercel.app/register", async (req, res) => {
   try {
     const { name, email, mobile, password } = req.body;
 
@@ -47,7 +47,7 @@ router.post("/register", async (req, res) => {
 });
 
 //user login
-router.post("/login", async (req, res) => {
+router.post("job-listing-ecru.vercel.app/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     if(!email || !password){

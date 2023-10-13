@@ -22,7 +22,7 @@ export default function EditJob() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/job/jobpost/${id}`)
+      .get(`job-listing-ecru.vercel.app/job/jobpost/${id}`)
       .then((res) => {
         console.log(res.data.message)
         setjobPost(res.data.message);
@@ -36,7 +36,7 @@ export default function EditJob() {
   const handleJobData = (e) => {
     e.preventDefault();
     axios
-      .patch(`http://localhost:4000/job/jobpost/${id}`, jobPost)
+      .patch(`job-listing-ecru.vercel.app/job/jobpost/${id}`, jobPost)
       .then((res) => {
         
       })
