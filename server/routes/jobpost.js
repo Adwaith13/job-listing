@@ -20,12 +20,12 @@ const isUserLoggedIn = (req, res, next) => {
 };
 
 //name of recruiter
-router.get("job-listing-ecru.vercel.app/dashboard", isUserLoggedIn, (req, res) => {
+router.get("/dashboard", isUserLoggedIn, (req, res) => {
   res.send(`Hello! ${req.user.name}`);
 });
 
 //post new job details
-router.post("job-listing-ecru.vercel.app/jobpost", async (req, res) => {
+router.post("/jobpost", async (req, res) => {
   try {
     const newJobPost = new jobPost({ ...req.body });
 
@@ -66,7 +66,7 @@ router.post("job-listing-ecru.vercel.app/jobpost", async (req, res) => {
 });
 
 //update the job details using ID
-router.patch("job-listing-ecru.vercel.app/jobpost/:id", async (req, res) => {
+router.patch("/jobpost/:id", async (req, res) => {
   try {
     const {
       company_name,
@@ -109,7 +109,7 @@ router.patch("job-listing-ecru.vercel.app/jobpost/:id", async (req, res) => {
 
 
 //fetch data for edit forms using id
-router.get("job-listing-ecru.vercel.app/jobpost/:id", async (req, res) => {
+router.get("/jobpost/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const jobDatabyID = await jobPost.findById(id, {
@@ -146,7 +146,7 @@ router.get("job-listing-ecru.vercel.app/jobpost/:id", async (req, res) => {
 });
 
 //fetching all jobdata
-router.get("job-listing-ecru.vercel.app/jobdata", async (req, res) => {
+router.get("/jobdata", async (req, res) => {
   try {
     const jobs = await jobPost.find();
     res.json({
@@ -162,7 +162,7 @@ router.get("job-listing-ecru.vercel.app/jobdata", async (req, res) => {
 });
 
 //fetching jobdata by id
-router.get("job-listing-ecru.vercel.app/jobdata/:id", async (req, res) => {
+router.get("/jobdata/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const jobDatabyID = await jobPost.findById(id, {
@@ -199,7 +199,7 @@ router.get("job-listing-ecru.vercel.app/jobdata/:id", async (req, res) => {
 });
 
 //filter jobs based on skills
-router.get("job-listing-ecru.vercel.app/jobdata/skills", async(req,res)=>{
+router.get("/jobdata/skills", async(req,res)=>{
   try{
     const {skills_required}=req.query;
     if(skills_required){
@@ -222,7 +222,7 @@ router.get("job-listing-ecru.vercel.app/jobdata/skills", async(req,res)=>{
 })
 
 //route for fetching jobposition
-router.get("job-listing-ecru.vercel.app/jobdata/jobposition", async(req,res)=>{
+router.get("/jobdata/jobposition", async(req,res)=>{
   try{
     const {job_position}=req.query;
     if(job_position){

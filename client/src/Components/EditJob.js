@@ -36,7 +36,7 @@ export default function EditJob() {
   const handleJobData = (e) => {
     e.preventDefault();
     axios
-      .patch(`job-listing-ecru.vercel.app/job/jobpost/${id}`, jobPost)
+      .patch(`http://localhost:4000/job/jobpost/${id}`, jobPost)
       .then((res) => {
         
       })

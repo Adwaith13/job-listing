@@ -27,7 +27,7 @@ export default function JobDetails() {
 
   const fetchUserData = () => {
     axios
-      .get("job-listing-ecru.vercel.app/job/dashboard", {
+      .get("http://localhost:4000/job/dashboard", {
         headers: {
           token: localStorage.getItem("logintoken"),
         },

@@ -23,8 +23,8 @@ app.get("job-listing-ecru.vercel.app/health", (req, res) => {
 });
 
 //routes
-app.use("job-listing-ecru.vercel.app/auth",authRoutes)
-app.use("job-listing-ecru.vercel.app/job",jobRoutes)
+app.use("/auth",authRoutes)
+app.use("/job",jobRoutes)
 
 //middleware to handle errors
 app.use((req,res,next)=>{
