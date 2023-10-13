@@ -11,14 +11,7 @@ dotenv.config();
 
 const app = express();
 
-const corsRequests={
-  origin:'https://job-listing-client.vercel.app',
-  methods:'GET,POST,PATCH,HEAD,DELETE,PUT',
-  credentials: true,
-  optionsSuccessStatus: 204,
-}
-
-app.use(cors(corsRequests));
+app.use(cors());
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,8 +25,8 @@ app.get("/health", (req, res) => {
 });
 
 //routes
-app.use("/auth",cors(corsRequests),authRoutes)
-app.use("/job",cors(corsRequests),jobRoutes)
+app.use("/auth",authRoutes)
+app.use("/job",jobRoutes)
 
 //middleware to handle errors
 app.use((req,res,next)=>{
