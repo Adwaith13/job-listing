@@ -10,9 +10,12 @@ const jobRoutes=require("../server/routes/jobpost.js")
 dotenv.config();
 
 const app = express();
+
 const corsRequests={
   origin:'https://job-listing-client.vercel.app/',
   methods:'GET,POST,PATCH,HEAD,DELETE,PUT',
+  credentials: true,
+  optionsSuccessStatus: 204,
 }
 
 app.use(cors(corsRequests));
