@@ -14,11 +14,11 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("job-listing-ecru.vercel.app/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("ok");
 });
 
-app.get("job-listing-ecru.vercel.app/health", (req, res) => {
+app.get("/health", (req, res) => {
   res.status(200).json({ status: "success", service: "job listing platform",timestamp:new Date()});
 });
 

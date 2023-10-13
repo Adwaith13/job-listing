@@ -22,7 +22,7 @@ export default function Register() {
       setError(true)
     }
     axios
-      .post("http://localhost:4000/auth/register", newUser)
+      .post("https://job-listing-server.vercel.app/auth/register", newUser)
       .then(() => {
         registered(true)
         if(registered){

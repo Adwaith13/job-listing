@@ -39,7 +39,7 @@ export default function JobPost() {
       setError(true);
     }
     axios
-      .post("http://localhost:4000/job/jobpost", jobPost)
+      .post("https://job-listing-server.vercel.app/job/jobpost", jobPost)
       .then((res) => {
         console.log(jobPost);
       })
