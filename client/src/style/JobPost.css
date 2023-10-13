@@ -1,0 +1,226 @@
+*{
+    margin: 0;
+    height: auto;
+    width: auto;
+}
+
+.addjob-container{
+    display: flex;
+}
+
+.jobpost-container{
+    margin-left: 5%;
+    height: 115vh;
+    width: 60vw;
+    overflow-y: hidden;
+}
+
+.add-job-heading{
+    font-family: 'DM Sans0',sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 8%;
+    margin-bottom: 2%;
+}
+
+.addjob-label{
+    font-family: 'DM Sans';
+    font-size: 20px;
+    font-weight: 400;
+    margin-right: 2%;
+    font-style: normal;
+}
+
+.company-name-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.add-logo-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 6%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.job-position-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 8.5%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.salary-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.job-type-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 11.2%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 15%;
+    font-size: 15px;
+    padding-left: 15px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.remote-office-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 5.5%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 15%;
+    font-size: 15px;
+    padding-left: 15px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.location-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 11%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.job-description-input{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 4.2%;
+    margin-bottom: 2%;
+    height: 10%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.about-info{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 3%;
+    margin-bottom: 2%;
+    height: 10%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.jobpost-skills{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 3.5%;
+    margin-bottom: 2%;
+    height: 3.5%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.required-info{
+    font-family: 'DM Sans',sans-serif;
+    color: #ADADAD;
+    margin-left: 7%;
+    margin-bottom: 4%;
+    height: 3.5%;
+    width: 55%;
+    font-size: 15px;
+    padding-left: 10px;
+    border: 2px solid #ADADAD;
+    border-radius: 5px;
+}
+
+.addjob-btn{
+    margin-left: 45%;
+    margin-bottom: 2%;
+    width: 100%;
+}
+.cancel-btn{
+    margin-right: 2%;
+    font-family: 'Roboto',sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    width:15%;
+    color: #C2C2C2;
+    background-color: white;
+    border: 2px solid ;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.postjob-btn{
+    font-family: 'DM Sans',sans-serif;
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    width:15%;
+    font-size: 15px;
+    background-color: #ED5353;
+    border: 2px solid white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.addjob-container2{
+    height: 115vh;
+    width: 45vw;
+    overflow-y: hidden;
+}
+
+.addjob-logo{
+    height: 100%;
+    width: 100%;
+}
+.addjob-text{
+    position: absolute;
+    color: white;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 25px;
+    margin-left: 8%;
+    margin-top: 2%;
+    letter-spacing: 1px;
+}
+

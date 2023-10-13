@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: auto;
+    overflow-x: hidden;
+}
+
+.navbar{
+    width: 100vw;
+    height: 17vh;
+    display: flex;
+    background-color: #ED5353;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.nav-logo{
+    font-family: 'DM Sans',sans-serif;
+    margin-top: 2.8%;
+    margin-left: 4.5%;
+    color: white;
+    font-size:22px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.nav-login{
+    height: 5.5%;
+    width: 7%;
+    margin-top: 2.8%;
+    margin-left:77vw;
+    color: white;
+    background-color: #FF6B6B;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.nav-register{
+    height: 5.5%;
+    width: 7%;
+    margin-top: 2.8%;
+    margin-left: 85vw;
+    color: #ED5353;
+    background-color: white;
+    border: 2px solid white;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 15px;
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.dashboard{
+    display: flex;
+    position: absolute;
+    margin-left: 74.5%;
+    margin-top: 3%;
+}
+
+.logout{
+    font-family: 'DM Sans',sans-serif;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.welcome-text{
+    font-family: 'DM Sans',sans-serif;
+    color: white;
+    font-size: 19px;
+    margin-left: 40px;
+}
+
+.shape1{
+    width: 18%;
+    height: 8%;
+    margin-top: 4.3%;
+    position: absolute;
+}
+
+.shape2{
+    width: 20%;
+    height: 10%;
+    margin-left: 40%;
+    position: absolute;
+}
+
+.shape3{
+    position: absolute;
+    margin-top: 0.1%;
+    width: 20%;
+    height: 16.8%;
+    margin-left: 73%;
+}
+
+.job{
+    width: 100vw;
+    height: 170vh;
+    background-color: #FFEFEF;
+}
+
+.banner{
+    position: absolute;
+    top: 13%;
+    width: 72vw;
+    height: 20vh;
+    background-color: white;
+    margin-left: 12%;
+    box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.10);
+}
+
+.banner-text{
+    color: #000;
+    margin-top: 2.5%;
+    text-align: center;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 30px;
+}
+
+.job-information{
+    height: 140vh;
+    margin-top: 12%;
+    margin-left: 12%;
+    margin-bottom: 3%;
+    background-color: white;
+    width: 72vw;
+    box-shadow: 0px 2px 35px 1px rgba(0, 0, 0, 0.10);
+    overflow-y: hidden;
+}
+
+.top-section{
+    display: flex;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+.details-job-type{
+    font-family: 'DM Sans',sans-serif;
+    font-size: 20px;
+    color: #999999;
+    margin-right: 20px;
+    letter-spacing: 1px;
+}
+
+.detail-logo{
+    width: 5%;
+    height: 5%;
+    margin-right: 10px;
+}
+
+.details-company-name{
+    font-family: 'DM Sans',sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #999999;
+}
+
+.middle-section{
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.detail-position{
+   display: inline;
+   font-family: 'DM Sans',sans-serif;
+   font-size: 45px;
+   letter-spacing: 1px;
+}
+
+.detail-edit{
+    margin-left: 80%;
+    padding: 10px 25px;
+    background-color: #ED5353;
+    border: 2px solid #ED5353;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 13px;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.detail-location{
+    font-family: 'DM Sans',sans-serif;
+    letter-spacing: 1px;
+    font-size: 20px;
+    color: #ED5353;
+}
+
+.cash-logo{
+    width: 2%;
+    margin-top: 1%;
+}
+
+.salary-text{
+    margin-left: 5px;
+    font-family: 'DM Sans',sans-serif;
+    font-size: 15px;
+    color: #999999;
+    letter-spacing: 1px;
+}
+
+.detail-salary{
+    font-family: 'DM Sans',sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 2%;
+    color: #595959;
+}
+
+.third-section{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 94%;
+}
+
+.about-heading{
+   font-family: 'DM Sans',sans-serif;
+   font-size: 20px;
+   letter-spacing: 1px;
+}
+
+.details{
+    font-family: 'DM Sans',sans-serif;
+    font-size: 15px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    letter-spacing: 2px;
+    margin-bottom: 3%;
+    color: #595959;
+}
