@@ -19,6 +19,7 @@ const corsRequests={
 }
 
 app.use(cors(corsRequests));
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -31,8 +32,8 @@ app.get("/health", (req, res) => {
 });
 
 //routes
-app.use("/auth",authRoutes)
-app.use("/job",jobRoutes)
+app.use("/auth",cors(corsRequests),authRoutes)
+app.use("/job",cors(corsRequests),jobRoutes)
 
 //middleware to handle errors
 app.use((req,res,next)=>{
