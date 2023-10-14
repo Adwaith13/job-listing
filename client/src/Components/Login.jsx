@@ -19,7 +19,7 @@ export default function Login() {
       setError(true)
     }
     axios
-      .post("https://job-listing-server.vercel.app/auth/login", Users)
+      .post("http://job-listing-server.vercel.app/auth/login", Users)
       .then((response) => {
         if (response.status === 200) {
           const loginToken = response.data.loginToken; 

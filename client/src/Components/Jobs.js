@@ -20,7 +20,7 @@ export default function Jobs() {
 
   const fetchJobData = () => {
     axios
-      .get("https://job-listing-server.vercel.app/job/jobdata")
+      .get("http://job-listing-server.vercel.app/job/jobdata")
       .then((res) => {
         console.log(res.data)
         setJobData(res.data.jobdata);
@@ -34,7 +34,7 @@ export default function Jobs() {
   };
 
   const filterSkills=()=>{
-    axios.get(`https://job-listing-server.vercel.app/job/jobdata/?skills=${selectedSkill}`)
+    axios.get(`http://job-listing-server.vercel.app/job/jobdata/?skills=${selectedSkill}`)
     .then((res)=>{
       console.log(res.data.jobdata)
       setJobData(res.data.jobdata)
@@ -58,7 +58,7 @@ export default function Jobs() {
 
   const searchJobPosition=(e)=>{
     setJobPosition(e.target.value)
-    axios.get(`https://job-listing-server.vercel.app/job/jobdata/?jobposition=${jobPosition}`)
+    axios.get(`http://job-listing-server.vercel.app/job/jobdata/?jobposition=${jobPosition}`)
     .then((res)=>{
       console.log(res.data.jobdata)
       setJobData(res.data.jobdata);
@@ -70,7 +70,7 @@ export default function Jobs() {
 
   const fetchUserData = () => {
     axios
-      .get("https://job-listing-server.vercel.app/job/dashboard", {
+      .get("http://job-listing-server.vercel.app/job/dashboard", {
         headers: {
           token: localStorage.getItem("logintoken"),
         },
@@ -175,7 +175,7 @@ export default function Jobs() {
       </div>
 
       <div className="job-container">
-        {jobData.map((data, i) => (
+        {jobData && jobData.map((data, i) => (
           <div key={i} className="job-display">
             <div className="first-container">
               <p className="job-position">{data.job_position}</p>

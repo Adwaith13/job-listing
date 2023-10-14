@@ -22,7 +22,7 @@ export default function EditJob() {
 
   useEffect(() => {
     axios
-      .get(`https://job-listing-server.vercel.app/job/jobpost/${id}`)
+      .get(`http://job-listing-server.vercel.app/job/jobpost/${id}`)
       .then((res) => {
         console.log(res.data.message)
         setjobPost(res.data.message);
@@ -36,7 +36,7 @@ export default function EditJob() {
   const handleJobData = (e) => {
     e.preventDefault();
     axios
-      .patch(`https://job-listing-server.vercel.app/job/jobpost/${id}`, jobPost)
+      .patch(`http://job-listing-server.vercel.app/job/jobpost/${id}`, jobPost)
       .then((res) => {
         
       })
