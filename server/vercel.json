@@ -12,28 +12,6 @@
   ],
   "routes": [
     {
-      "src": "/auth/(.*)",
-      "dest": "/routes/auth.js",
-      "methods": ["GET", "POST", "PATCH"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PATCH,POST",
-        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
-        "Access-Control-Allow-Credentials": "true"
-      }
-    },
-    {
-      "src": "/job/(.*)",
-      "dest": "/routes/jobpost.js",
-      "methods": ["GET", "POST", "PATCH"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PATCH,POST",
-        "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
-        "Access-Control-Allow-Credentials": "true"
-      }
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.js",
       "methods": ["GET", "POST", "PATCH"],
