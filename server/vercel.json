@@ -17,7 +17,7 @@
   "routes": [
     {
       "src": "/auth/(.*)",
-      "dest": "/routes/auth.js",
+      "dest": "/index.js",
       "methods": ["GET", "POST", "PATCH"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
@@ -28,7 +28,7 @@
     },
     {
       "src": "/job/(.*)",
-      "dest": "/routes/jobpost.js",
+      "dest": "/index.js",
       "methods": ["GET", "POST", "PATCH"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
