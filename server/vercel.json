@@ -1,5 +1,15 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "/server/routes/auth.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "/server/routes/jobpost.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/auth/(.*)",
