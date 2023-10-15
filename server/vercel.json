@@ -6,11 +6,11 @@
       "use": "@vercel/node"
     },
     {
-      "src": "/routes/auth.js",
+      "src": "./routes/auth.js",
       "use": "@vercel/node"
     },
     {
-      "src": "/routes/jobpost.js",
+      "src": "./routes/jobpost.js",
       "use": "@vercel/node"
     }
   ],
@@ -28,7 +28,7 @@
     },
     {
       "src": "/auth/(.*)",
-      "dest": "/routes/auth.js",
+      "dest": "./routes/auth.js",
       "methods": ["GET", "POST", "PATCH"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
@@ -39,7 +39,7 @@
     },
     {
       "src": "/job/(.*)",
-      "dest": "/routes/jobpost.js",
+      "dest": "./routes/jobpost.js",
       "methods": ["GET", "POST", "PATCH"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
