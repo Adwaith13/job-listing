@@ -2,22 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "/server/index.js",
+      "src": "/index.js",
       "use": "@vercel/node"
     },
     {
-      "src": "/server/routes/auth.js",
+      "src": "/routes/auth.js",
       "use": "@vercel/node"
     },
     {
-      "src": "/server/routes/jobpost.js",
+      "src": "/routes/jobpost.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/server/index.js",
+      "dest": "/index.js",
       "methods": ["GET", "POST", "PATCH"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
@@ -28,7 +28,7 @@
     },
     {
       "src": "/auth/(.*)",
-      "dest": "/server/routes/auth.js",
+      "dest": "/routes/auth.js",
       "methods": ["GET", "POST", "PATCH"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
@@ -39,7 +39,7 @@
     },
     {
       "src": "/job/(.*)",
-      "dest": "/server/routes/jobpost.js",
+      "dest": "/routes/jobpost.js",
       "methods": ["GET", "POST", "PATCH"],
       "headers": {
         "Access-Control-Allow-Origin": "*",
