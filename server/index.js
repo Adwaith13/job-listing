@@ -46,7 +46,10 @@ app.use((error,req,res,next)=>{
 
 app.listen(process.env.PORT, () => {
   mongoose
-    .connect(process.env.MONGODB_URL)
+    .connect(process.env.MONGODB_URL,{
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
     .then(() => {
       console.log(`Server up and running on http://localhost:${process.env.PORT}`);
     })
