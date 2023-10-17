@@ -29,10 +29,10 @@
       {
         "src": "/auth/register",
         "dest": "/routes/auth.js",
-        "methods": [ "POST"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -40,10 +40,10 @@
       {
         "src": "/auth/login",
         "dest": "/routes/auth.js",
-        "methods": [ "POST"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -51,10 +51,10 @@
       {
         "src": "/job/dashboard",
         "dest": "/routes/jobpost.js",
-        "methods": ["GET"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -62,10 +62,10 @@
       {
         "src": "/job/jobpost",
         "dest": "/routes/jobpost.js",
-        "methods": [ "POST" ],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -73,10 +73,10 @@
       {
         "src": "/job/jobpost/:id",
         "dest": "/routes/jobpost.js",
-        "methods": ["PATCH"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "PATCH,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -84,10 +84,10 @@
       {
         "src": "/job/jobpost/:id",
         "dest": "/routes/jobpost.js",
-        "methods": ["GET"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -95,10 +95,10 @@
       {
         "src": "/job/jobdata",
         "dest": "/routes/jobpost.js",
-        "methods": ["GET"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -106,10 +106,10 @@
       {
         "src": "/job/jobdata/:id",
         "dest": "/routes/jobpost.js",
-        "methods": ["GET"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -117,10 +117,10 @@
       {
         "src": "/job/jobdata/skills",
         "dest": "/routes/jobpost.js",
-        "methods": ["GET"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
@@ -128,10 +128,10 @@
       {
         "src": "/job/jobdata/jobposition",
         "dest": "/routes/jobpost.js",
-        "methods": ["GET"],
+        "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Methods": "GET,PATCH,POST,OPTIONS",
           "Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
           "Access-Control-Allow-Credentials": "true"
         }
