@@ -6,11 +6,11 @@
         "use": "@vercel/node"
       },
       {
-        "src": "./routes/auth.js",
+        "src": "/routes/auth.js",
         "use": "@vercel/node"
       },
       {
-        "src": "./routes/jobpost.js",
+        "src": "/routes/jobpost.js",
         "use": "@vercel/node"
       }
     ],
@@ -28,7 +28,7 @@
       },
       {
         "src": "/auth/register",
-        "dest": "./routes/auth.js",
+        "dest": "/routes/auth.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -39,7 +39,7 @@
       },
       {
         "src": "/auth/login",
-        "dest": "./routes/auth.js",
+        "dest": "/routes/auth.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -50,7 +50,7 @@
       },
       {
         "src": "/job/dashboard",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -61,7 +61,7 @@
       },
       {
         "src": "/job/jobpost",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -72,7 +72,7 @@
       },
       {
         "src": "/job/jobpost/:id",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -83,7 +83,7 @@
       },
       {
         "src": "/job/jobpost/:id",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -94,7 +94,7 @@
       },
       {
         "src": "/job/jobdata",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -105,7 +105,7 @@
       },
       {
         "src": "/job/jobdata/:id",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -116,7 +116,7 @@
       },
       {
         "src": "/job/jobdata/skills",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
@@ -127,7 +127,7 @@
       },
       {
         "src": "/job/jobdata/jobposition",
-        "dest": "./routes/jobpost.js",
+        "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
           "Access-Control-Allow-Origin": "*",
