@@ -27,7 +27,7 @@
         }
       },
       {
-        "src": "/auth/register",
+        "src": "/register",
         "dest": "/routes/auth.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -38,7 +38,7 @@
         }
       },
       {
-        "src": "/auth/login",
+        "src": "/login",
         "dest": "/routes/auth.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -49,7 +49,7 @@
         }
       },
       {
-        "src": "/job/dashboard",
+        "src": "/dashboard",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -60,7 +60,7 @@
         }
       },
       {
-        "src": "/job/jobpost",
+        "src": "/jobpost",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -71,7 +71,7 @@
         }
       },
       {
-        "src": "/job/jobpost/:id",
+        "src": "/jobpost/:id",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -82,7 +82,7 @@
         }
       },
       {
-        "src": "/job/jobpost/:id",
+        "src": "/jobpost/:id",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -93,7 +93,7 @@
         }
       },
       {
-        "src": "/job/jobdata",
+        "src": "/jobdata",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -104,7 +104,7 @@
         }
       },
       {
-        "src": "/job/jobdata/:id",
+        "src": "/jobdata/:id",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -115,7 +115,7 @@
         }
       },
       {
-        "src": "/job/jobdata/skills",
+        "src": "/jobdata/skills",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {
@@ -126,7 +126,7 @@
         }
       },
       {
-        "src": "/job/jobdata/jobposition",
+        "src": "/jobdata/jobposition",
         "dest": "/routes/jobpost.js",
         "methods": ["GET", "POST", "PATCH", "OPTIONS"],
         "headers": {

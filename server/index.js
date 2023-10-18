@@ -25,8 +25,8 @@ app.get("/health", (req, res) => {
 });
 
 //routes
-app.use("/auth",authRoutes)
-app.use("/job",jobRoutes)
+app.use("/",authRoutes)
+app.use("/",jobRoutes)
 
 //middleware to handle errors
 app.use((req,res,next)=>{
