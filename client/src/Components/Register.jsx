@@ -13,7 +13,7 @@ export default function Register() {
   });
 
   const [error,setError]=useState(false)
-  const [registered]=useState(false)
+  const [registered,setRegistered]=useState(false)
   const navigate=useNavigate();
 
   const handleUserData = (e) => {
@@ -24,8 +24,8 @@ export default function Register() {
     axios
       .post("https://job-listing-server.vercel.app/register", newUser)
       .then(() => {
-        registered(true)
-        if(registered){
+        setRegistered(true)
+        if(registered(true) && error(false)) {
           navigate('/')
         }
         console.log(newUser);
