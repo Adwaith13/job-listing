@@ -24,10 +24,6 @@ export default function Register() {
     axios
       .post("https://job-listing-server.vercel.app/register", newUser)
       .then(() => {
-        setRegistered(true)
-        if(registered(true) && error(false)) {
-          navigate('/')
-        }
         console.log(newUser);
         setNewUser({
           name: "",
@@ -35,6 +31,10 @@ export default function Register() {
           mobile: "",
           password: "",
         });
+        setRegistered(true)
+        if(registered(true) && error(false)) {
+          navigate('/')
+        }
       })
       .catch((error) => {
         if (error) {
